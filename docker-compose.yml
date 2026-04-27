@@ -1,14 +1,5 @@
-version: '3.8'
-
 services:
-  wiremock:
-    image: wiremock/wiremock:latest
-    ports:
-      - "8089:8080"
-      -
-  my-app:
+  app:
     build: .
-    depends_on:
-      - wiremock
-    environment:
-      - WIREMOCK_URL=http://wiremock:8089
+    ports:
+      - "8089:8089"

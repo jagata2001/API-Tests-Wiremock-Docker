@@ -14,6 +14,7 @@ public class MockServerManager {
             server = new WireMockServer(
                     wireMockConfig()
                             .port(port)
+                            .bindAddress("0.0.0.0")
                             .extensions(new UserResponseTransformer())
                     //.notifier(new ConsoleNotifier(true))
 
